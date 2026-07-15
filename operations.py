@@ -88,5 +88,29 @@ def mark_in_progress(agenda, tag):
     """
     agenda[tag]["status"] = "in progress"
 
+def list_status(agenda, status):
+    """
+    Print each task information in the agenda by each status.
+    ------------------------------------------------------------------------------------
+    Parameters:
+        - agenda:       The agenda dictionary. contains the information of all taks linked until present.
+        - status:       The task status informed.
+    ------------------------------------------------------------------------------------
+    Retrun: Void.
+    """
+    print(ID.ljust(3), DESCRIPTION.ljust(50), STATUS.ljust(25))
+    print("------------------------------------------------------------------")
+    if status.lower() == "done":
+        for key in agenda:
+            if agenda[key]["status"] == "done":
+                print(f"{agenda[key]['id']:<3} {agenda[key]['description']:<50} {agenda[key]['status']:<25}")
+    if status.lower() == "todo":
+        for key in agenda:
+            if agenda[key]['status'] == "todo":
+                print(f"{agenda[key]['id']:<3} {agenda[key]['description']:<50} {agenda[key]['status']:<25}")
+    if status.lower() == "in-progress":
+        for key in agenda:
+            if agenda[key]["status"] == "in progress":
+                print(f"{agenda[key]['id']:<3} {agenda[key]['description']:<50} {agenda[key]['status']:<25}")
 
 
