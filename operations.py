@@ -64,3 +64,29 @@ def update_description(agenda, tag, new_description):
     agenda[tag]["description"] = new_description
     agenda[tag]["UpdatedAt"] = datetime.now()
 
+def mark_done(agenda, tag):
+    """
+    Updates the status of an task epecified by 'tag" input marking as 'done'.
+    ------------------------------------------------------------------------------------
+    Parameters:
+        - agenda:       The agenda dictionary. contains the information of all taks linked until present.
+        - tag:          The identification tag. consists of an int number for task position.
+    ------------------------------------------------------------------------------------
+    Return: Void. Updates the task status.
+    """
+    agenda[tag]["status"] = "done"
+
+def mark_in_progress(agenda, tag):
+    """
+    Updates the status of an task epecified by 'tag" input marking as 'din progress'.
+    ------------------------------------------------------------------------------------
+    Parameters:
+        - agenda:       The agenda dictionary. contains the information of all taks linked until present.
+        - tag:          The identification tag. consists of an int number for task position.
+    ------------------------------------------------------------------------------------
+    Return: Void. Updates the task status.
+    """
+    agenda[tag]["status"] = "in progress"
+
+
+
