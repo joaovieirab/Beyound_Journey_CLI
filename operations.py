@@ -51,7 +51,7 @@ def list_tasks(agenda):
         
 def update_description(agenda, tag, new_description):
     """
-    Updates the description of an especific task, witch its position is informed as an parameter 'tag'.
+    Updates the description of an especific task, witch its position is informed as an parameter tag.
     ------------------------------------------------------------------------------------
     Parameters:
         - agenda:       The agenda dictionary. contains the information of all taks linked until present.
@@ -66,7 +66,7 @@ def update_description(agenda, tag, new_description):
 
 def mark_done(agenda, tag):
     """
-    Updates the status of an task epecified by 'tag" input marking as 'done'.
+    Updates the status of an task epecified by tag input marking as 'done'.
     ------------------------------------------------------------------------------------
     Parameters:
         - agenda:       The agenda dictionary. contains the information of all taks linked until present.
@@ -78,7 +78,7 @@ def mark_done(agenda, tag):
 
 def mark_in_progress(agenda, tag):
     """
-    Updates the status of an task epecified by 'tag" input marking as 'din progress'.
+    Updates the status of an task epecified by input marking as 'in progress'.
     ------------------------------------------------------------------------------------
     Parameters:
         - agenda:       The agenda dictionary. contains the information of all taks linked until present.
@@ -114,3 +114,14 @@ def list_status(agenda, status):
                 print(f"{agenda[key]['id']:<3} {agenda[key]['description']:<50} {agenda[key]['status']:<25}")
 
 
+def delete_task(agenda, tag):
+    """
+    Removes an task especified by tag input.
+    ------------------------------------------------------------------------------------
+    Parameters: 
+        - agenda:       The agenda dictionary. contains the information of all taks linked until present.
+        - tag:          The identification tag. consists of an int number for task position.
+    ------------------------------------------------------------------------------------
+    Return: Void.
+    """
+    del agenda[tag]
