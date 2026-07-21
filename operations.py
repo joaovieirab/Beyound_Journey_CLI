@@ -22,16 +22,16 @@ def create_task (agenda, description, id=1):
             'id': id,
             'description': description,
             'status':'todo',
-            'CreatedAt':datetime.now(),
-            'UpdatedAt':datetime.now()
+            'CreatedAt':str(datetime.now()),
+            'UpdatedAt':str(datetime.now())
         }
     else:
         new_task = {
             'id': agenda_len + 1,
             'description': description,
             'status':'todo',
-            'CreatedAt':datetime.now(),
-            'UpdatedAt':datetime.now()
+            'CreatedAt':str(datetime.now()),
+            'UpdatedAt':str(datetime.now())
         }
     agenda[new_task["id"]] = new_task
 
